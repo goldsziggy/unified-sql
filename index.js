@@ -3,10 +3,6 @@ var dbList = {
 		name: 	'Microsoft SQL Server',
 		script: require('./db/sqlServer')
 	},
-	oracle:{
-		name: 	'Oracle',
-		script: require('./db/oracle')
-	},
 	mysql:{
 		name: 	'MySQL',
 		script: require('./db/mysql')
