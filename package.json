@@ -29,7 +29,6 @@
   "homepage": "https://github.com/arkihillel/unified-sql#readme",
   "dependencies": {
     "cassandra-driver": "^2.2.2",
-    "mariasql": "^0.2.5",
     "mongodb": "^2.1.0",
     "mysql": "^2.9.0",
     "pg": "^4.4.3",

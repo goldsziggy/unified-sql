@@ -15,10 +15,6 @@ var dbList = {
 		name: 	'IBM DB2',
 		script: require('./db/db2')
 	},
-	mariadb:{
-		name: 	'MariaDB',
-		script: require('./db/mariadb')
-	},
 	mongodb:{
 		name: 	'MongoDB',
 		script: require('./db/mongodb')
