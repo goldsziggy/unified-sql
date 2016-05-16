@@ -1,27 +1,34 @@
+import sqlServer from './db/sqlServer';
+import mysql from './db/mysql';
+import postgreSql from './db/postgreSql';
+import db2 from './db/db2';
+import mongodb from './db/mongodb';
+import sybase from './db/sybase';
+
 var dbList = {
 	sqlServer:{
 		name: 	'Microsoft SQL Server',
-		script: require('./db/sqlServer')
+		script: sqlServer
 	},
 	mysql:{
 		name: 	'MySQL',
-		script: require('./db/mysql')
+		script: mysql
 	},
 	postgreSql:{
 		name: 	'PostgreSQL',
-		script: require('./db/postgreSql')
+		script: postgreSql
 	},
 	db2:{
 		name: 	'IBM DB2',
-		script: require('./db/db2')
+		script: db2
 	},
 	mongodb:{
 		name: 	'MongoDB',
-		script: require('./db/mongodb')
+		script: mongodb
 	},
 	sybase:{
 		name: 	'SAP ASE / Sybase',
-		script: require('./db/sybase')
+		script: sybase
 	}
 };
 
