@@ -1,5 +1,5 @@
-var ibmdb = require('ibm_db');
-var async = require('async');
+import ibmdb from 'ibm_db';
+import async from 'async';
 
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	ibmdb.open('DRIVER={DB2};DATABASE=' + db + ';HOSTNAME=' + host + ';UID=' + user + ';PWD=' + password + ';PORT=' + (port || 50001) + ';PROTOCOL=TCPIP', function (err,conn) {

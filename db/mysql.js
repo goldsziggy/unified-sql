@@ -1,5 +1,5 @@
-var mysql = require('mysql');
-var async = require('async');
+import mysql from 'mysql';
+import async from 'async';
 
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	var connection = mysql.createConnection({

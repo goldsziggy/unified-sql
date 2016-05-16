@@ -1,5 +1,5 @@
-var cassandra = require('cassandra-driver');
-var async = require('async');
+import cassandra from 'cassandra-driver';
+import async from 'async';
 
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	

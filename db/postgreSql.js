@@ -1,5 +1,6 @@
-var pg = require('pg');
-var async = require('async');
+import pg from 'pg';
+import async from 'async';
+
 
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	var conString = 'postgres://' + user + ':' + password + '@' + host + ':' + (port || 5432) + '/' + db;

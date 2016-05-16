@@ -1,5 +1,6 @@
+import async from 'async';
 var MongoClient = require('mongodb').MongoClient;
-var async = require('async');
+
 
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	

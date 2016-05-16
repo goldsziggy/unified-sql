@@ -1,5 +1,5 @@
-var Sybase = require('sybase');
-var async = require('async');
+import Sybase from 'sybase';
+import async from 'async';
 
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	var db = new Sybase(host, port, db, user, password);
