@@ -64,7 +64,7 @@ var testConnection = function(type, host, port, user, password, db, options, cb)
 
 var getConnectionTypes = function (){
 	var types = [];
-	for (dbName in dbList){
+	for (var dbName in dbList){
 		types.push({key: dbName, name: dbList[dbName].name});
 	}
 	return types;
