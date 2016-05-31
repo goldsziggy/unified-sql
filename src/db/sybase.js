@@ -1,6 +1,11 @@
 import Sybase from 'sybase';
 import async from 'async';
 
+var meta_data_query = `
+select b.name as tablename, a.name as columnname
+from syscolumns a join systables b on (a.id = b.id) 
+where b.type='U'
+`;
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	var db = new Sybase(host, port, db, user, password);
  
@@ -26,6 +31,10 @@ var executeQueries = function(host, port, user, password, db, queries, options, 
 		});
 	});
 };
+
+var executeMetaDataQuery = function(host, port, user, password, db, options, cb){
+	return this.executeQueries(host, port, user, password, db, [this.meta_data_query], options, cb);
+}
 
 var testConnection = function(host, port, user, password, db, options, cb) {
 	var db = new Sybase(host, port, db, user, password);
@@ -57,5 +66,6 @@ var formatOutput = function(output) {
 
 module.exports = {
 	executeQueries: executeQueries,
+	executeMetaDataQuery: executeMetaDataQuery,
 	testConnection: testConnection
 };

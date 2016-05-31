@@ -1,6 +1,13 @@
 import mysql from 'mysql';
 import async from 'async';
 
+var meta_data_query = `
+	SELECT table_schema, table_name, column_name, ordinal_position, data_type, 
+       numeric_precision, column_type, column_default, is_nullable, column_comment 
+  FROM information_schema.columns 
+  order by table_schema, table_name, column_name, ordinal_position;
+`;
+
 var executeQueries = function(host, port, user, password, db, queries, options, cb) {
 	var connection = mysql.createConnection({
 		host: host,
@@ -30,6 +37,12 @@ var executeQueries = function(host, port, user, password, db, queries, options, 
 
 	});
 };
+
+var executeMetaDataQuery = function(host, port, user, password, db, options, cb){
+	return this.executeQueries(host, port, user, password, db, [this.meta_data_query], options, cb);
+}
+
+
 
 var testConnection = function(host, port, user, password, db, options, cb) {
 	var connection = mysql.createConnection({
@@ -66,5 +79,6 @@ var formatOutput = function(output) {
 
 module.exports = {
 	executeQueries: executeQueries,
+	executeMetaDataQuery: executeMetaDataQuery,
 	testConnection: testConnection
 };
