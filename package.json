@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/arkihillel/unified-sql#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.5",
     "cassandra-driver": "^2.2.2",
     "ibm_db": "0.0.19",
     "mongodb": "^2.1.0",
